@@ -1,8 +1,8 @@
 Metadata-Version: 2.1
-Name: ocr-genAI
+Name: ocr-genai
 Version: 0.1.0
 Summary: A package for performing OCR and interpreting the output using OpenAI and Gemini models.
-Home-page: https://github.com/Joshuaatanu/imago-ad-illud/tree/main
+Home-page: https://github.com/Joshuaatanu/ocr_genAI/tree/main
 Author: Joshua Atanu
 Author-email: atanu.joshua@gmail.com
 License: UNKNOWN
@@ -13,5 +13,24 @@ Classifier: Operating System :: OS Independent
 Requires-Python: >=3.6
 Description-Content-Type: text/markdown
 
-UNKNOWN
+# OCR Package
+
+This Python package allows you to perform OCR on images using Tesseract and interpret the results using generative AI models like OpenAI's GPT and Google's Gemini.
+
+## Installation
+
+To install the package, use:
+
+pip install ocr_genAI
+
+## Usage
+
+```python
+from ocr_package import perform_ocr, interpret_with_openai, interpret_with_gemini
+
+ocr_output = perform_ocr("image_path.jpg")
+openai_response = interpret_with_openai(ocr_output, "your_openai_api_key")
+gemini_response = interpret_with_gemini(ocr_output, "your_gemini_api_key")
+
+
 

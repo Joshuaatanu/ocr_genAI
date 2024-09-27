@@ -1,4 +1,4 @@
-pytesseract
 Pillow
-openai
 google-generativeai
+openai
+pytesseract

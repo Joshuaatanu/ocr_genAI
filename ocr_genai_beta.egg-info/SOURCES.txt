@@ -1,0 +1,9 @@
+README.md
+setup.py
+ocr_genai/__init__.py
+ocr_genai/ocr_package.py
+ocr_genai_beta.egg-info/PKG-INFO
+ocr_genai_beta.egg-info/SOURCES.txt
+ocr_genai_beta.egg-info/dependency_links.txt
+ocr_genai_beta.egg-info/requires.txt
+ocr_genai_beta.egg-info/top_level.txt
