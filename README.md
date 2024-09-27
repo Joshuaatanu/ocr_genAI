@@ -11,9 +11,26 @@ pip install ocr_genAI
 ## Usage
 
 ```python
-from ocr_package import perform_ocr, interpret_with_openai, interpret_with_gemini
 
-ocr_output = perform_ocr("image_path.jpg")
-openai_response = interpret_with_openai(ocr_output, "your_openai_api_key")
-gemini_response = interpret_with_gemini(ocr_output, "your_gemini_api_key")
+from ocr_genai import perform_ocr, interpret_with_openai, interpret_with_gemini
 
+
+# Replace with your actual image path and API keys
+image_path = "image.jpg"  # Ensure this image exists in your directory
+openai_api_key = "YOUR_OPENAI_API_KEY"
+gemini_api_key = "YOUR_GEMINI_API_KEY"
+
+# Perform OCR
+ocr_output = perform_ocr(image_path)
+if ocr_output:
+    print("OCR Output:\n", ocr_output)
+
+    # Interpret with OpenAI
+    openai_response = interpret_with_openai(ocr_output, openai_api_key)
+    if openai_response:
+        print("OpenAI Response:\n", openai_response)
+
+    # Interpret with Gemini
+    gemini_response = interpret_with_gemini(ocr_output, gemini_api_key)
+    if gemini_response:
+        print("Gemini Response:\n", gemini_response)
