@@ -6,7 +6,7 @@ This Python package allows you to perform OCR on images using Tesseract and inte
 
 To install the package, use:
 
-pip install ocr_genAI
+pip install ocr-genai-beta
 
 ## Usage
 
