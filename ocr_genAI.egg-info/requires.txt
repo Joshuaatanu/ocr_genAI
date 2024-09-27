@@ -1,0 +1,5 @@
+Pillow
+google-generativeai
+openai
+pytesseract
+re
