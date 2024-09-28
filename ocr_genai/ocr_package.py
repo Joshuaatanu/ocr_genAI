@@ -10,6 +10,7 @@ from PIL import Image
 import re
 from openai import OpenAI
 import google.generativeai as genai
+import anthropic
 
 def perform_ocr(image_path):
     """Performs OCR on an image and cleans the output.
@@ -77,6 +78,24 @@ def interpret_with_gemini(ocr_output, gemini_api_key):
     except Exception as e:
         print(f"Error during Gemini interpretation: {e}")
         return None
+    
+def interpret_with_claude(ocr_output,claude_api_key):
+    try:
+        client = anthropic.Anthropic(
+            api_key = claude_api_key
+        )
+        message  = client.messages.create(
+        model="claude-3-5-sonnet-20240620",
+        max_tokens= 512,
+        messages =[
+            {"role":"user", "content":"you are a helpful assistant, your job is  to interprete the data recieved from the ocr engine" + ocr_output}
+        ]
+        )
+        return message.content
+    except Exception as e:
+         print(f"Error during Gemini interpretation: {e}")
+         return None
+
 
 if __name__ == "__main__":
     # Example usage
@@ -87,6 +106,7 @@ if __name__ == "__main__":
         # Replace with your actual API keys
         openai_api_key = "YOUR_OPENAI_API_KEY"
         gemini_api_key = "YOUR_GEMINI_API_KEY"
+        claude_api_key = "YOUR_GEMINI_API_KEY"
 
         openai_response = interpret_with_openai(ocr_output, openai_api_key)
         if openai_response:
@@ -95,3 +115,8 @@ if __name__ == "__main__":
         gemini_response = interpret_with_gemini(ocr_output, gemini_api_key)
         if gemini_response:
             print("Gemini Response:\n", gemini_response)
+        
+        claude_response = interpret_with_claude(ocr_output, claude_api_key)
+        if claude_response:
+            print("Claude Response:\n", claude_response)
+

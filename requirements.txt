@@ -2,3 +2,4 @@ pytesseract
 Pillow
 openai
 google-generativeai
+anthropic

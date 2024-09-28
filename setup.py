@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="ocr-genai-beta",  # Package name
-    version="0.1.3",     # Version number
+    version="0.1.4",     # Version number
     author="Joshua Atanu",  # Your name or organization's name
     author_email="atanu.joshua@gmail.com",  # Your email
     description="A package for performing OCR and interpreting the output using OpenAI and Gemini models.",
@@ -15,6 +15,7 @@ setup(
         "Pillow",
         "openai",
         "google-generativeai",
+        "anthropic"
         
     ],  # External dependencies
     classifiers=[
