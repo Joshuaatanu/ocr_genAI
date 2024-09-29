@@ -8,7 +8,7 @@ To install the package, use:
 
 `!pip install ocr-genai-beta`
 
-
+and this
 `!apt install tesseract-ocr`
 
 ## Usage

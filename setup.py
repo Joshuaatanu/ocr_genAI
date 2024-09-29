@@ -11,7 +11,7 @@ setup(
     url="https://github.com/Joshuaatanu/ocr_genAI/tree/main",  # Optional: Project URL
     packages=find_packages(),  # Automatically find all packages
     install_requires=[
-        "pytesseract",
+        "`pytesseract`",
         "Pillow",
         "openai",
         "google-generativeai",
